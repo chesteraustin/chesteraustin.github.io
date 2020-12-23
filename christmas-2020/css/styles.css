@@ -67,7 +67,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -6247,7 +6247,7 @@ button.bg-danger:focus {
 }
 
 .bg-light {
-  background-color: #f8f9fa !important;
+  background-color: #067cf1 !important;
 }
 
 a.bg-light:hover, a.bg-light:focus,
@@ -10344,17 +10344,3 @@ body {
   padding: 5rem 0;
 }
 
-.items {
-  width: 90%;
-  margin: 0px auto;
-  margin-top: 100px
-}
-
-.slick-slide {
-  margin: 10px
-}
-
-.slick-slide img {
-  width: 100%;
-  border: 0px solid #fff
-}
