@@ -10344,3 +10344,6 @@ body {
   padding: 5rem 0;
 }
 
+.container .row {
+  padding-bottom: 1rem;
+}
