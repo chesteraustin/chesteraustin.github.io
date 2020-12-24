@@ -67,7 +67,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: rgb(255, 255, 255);
+  background-color: #fff;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -6247,7 +6247,7 @@ button.bg-danger:focus {
 }
 
 .bg-light {
-  background-color: #067cf1 !important;
+  background-color: #f8f9fa !important;
 }
 
 a.bg-light:hover, a.bg-light:focus,
@@ -10207,7 +10207,7 @@ body {
   height: auto;
   min-height: 35rem;
   padding: 15rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%), url("https://lh3.googleusercontent.com/pw/ACtC-3d_GhQPo8iD5Xputk-3jkSYz-sCnKVv-sdD5-S2sv4Q5KL7xJ76hOcIut_g1XsDGGPWvAVzfx6N539h6_yHOEy6JboXHNrdpuPwToA4fxETsehGXhli10xzTpNmob3KogcyfYqcrpvJPbjwPaQEYZGtQg=w2560-h1213-no");
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%), url("../assets/img/bg-masthead.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -10218,7 +10218,7 @@ body {
   font-size: 2.5rem;
   line-height: 2.5rem;
   letter-spacing: 0.8rem;
-  background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
           background-clip: text;
@@ -10286,7 +10286,7 @@ body {
 
 .signup-section {
   padding: 10rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000000 100%), url("https://lh3.googleusercontent.com/pw/ACtC-3frXo5oC10FLmfS63m_faPlwerdLdxh6bW1uC-WtxiX9ygp_b0v2Wdbb5HP2stGfkURucYuU5dF_lf5r0Jmhl1S8F1Kx6xbNkPeU7VAsTBCNlza0gQYmefyq24O6EvwZAHTi2nO0-MlEuiDdA6mWsyNGg=w2560-h1245-no?authuser=0");
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000000 100%), url("../assets/img/bg-signup.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
