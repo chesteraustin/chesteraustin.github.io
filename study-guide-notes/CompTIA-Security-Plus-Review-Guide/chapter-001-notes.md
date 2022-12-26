@@ -7,9 +7,9 @@
    - [ ] D. Port scanning
 
 2. While invesigating the causes of these issues, you discover a rootkit on your mission-critical database server.  What is the best step to take to return this system to production?
-   - [ ] A. Reconstitute the system
+   - [x] A. Reconstitute the system ***after a rootkit has infected a system, that system can no longer be trusted or considered secure; reconsititution involves a low-level formatting operation on all storage devices on that system, reinstalling the OS and all applications from trusted sources and then restoring files from trusted rootkit-free backups***
    - [ ] B. Run an antivirus tool
-   - [ ] C. Install a HIDS
+   - [ ] C. Install a HIDS *host-based intrusion detection system*
    - [ ] D. Apply vendor patches
 
 3. If user awareness is overlooked, what attack is most likely to succeed?
@@ -31,16 +31,16 @@
    - [ ] D. Escaping metacharacters
 
 6. What type of virus attempts to disable security features that are focused on preventing malware infection?
-   - [ ] A. Retrovirus
-   - [ ] B. Polymorphic
-   - [ ] C. Companion
-   - [ ] D. Armored
+   - [x] A. Retrovirus ***specifically targeted at antivirus systems to render them useless***
+   - [ ] B. Polymorphic *ability to mask code using encryption to avoid detection by antivirus scanners*
+   - [ ] C. Companion *borrows the root filename of a common executable and then gives itself the `.com` extension in an attempt to get itself launched*
+   - [ ] D. Armored *malware that has been crafted to avoid detection and makes removal difficult*
 
 7. What does the acronym RAT stand for?
    - [ ] A. Random Access Token
    - [ ] B. Remote Authentication Testing
    - [ ] C. Random Authorization Trajectory
-   - [ ] D. Remote Access Trojan
+   - [ ] D. Remote Access Trojan ***Remote Access Trojan is a form of malicious code that grants an attacker some level of remote-control access to a compromised system***
 
 8. What form of social engineering attack focuses on stealing credentials or identity information from any potential target?
    - [ ] A. Phising
