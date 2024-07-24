@@ -1,0 +1,41 @@
+/* Custom styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    margin-top: 20px;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#grandTotalContainer {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+#grandTotal {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
