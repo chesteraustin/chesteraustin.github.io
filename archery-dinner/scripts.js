@@ -152,7 +152,7 @@ function displayRestaurantCard(restaurants) {
   const grandTotal = parseInt(grandTotalText) || 0;
 
   // Calculate the maximum grand total possible (10 rows * 33 max value per row)
-  const maxGrandTotal = 10 * (11 * 3);
+  const maxGrandTotal = 3 * (11 * 3);
 
   // Define non-overlapping ranges for each restaurant
   const ranges = generateNonOverlappingRanges(
