@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function addRows() {
   const rowsContainer = document.getElementById("rowsContainer");
 
-  for (let i = 1; i <= 10; i++) {
+  for (let i = 1; i <= 3; i++) {
     const card = document.createElement("div");
     card.classList.add("col-md-6", "mb-3");
 
@@ -70,7 +70,7 @@ function calculateRowTotal(row) {
 function calculateGrandTotal() {
   let grandTotal = 0;
 
-  for (let i = 1; i <= 10; i++) {
+  for (let i = 1; i <= 3; i++) {
     const rowTotal =
       parseInt(
         document.getElementById(`totalScore${i}`).textContent.split(": ")[1]
@@ -94,7 +94,7 @@ async function fetchRestaurants() {
       const { latitude, longitude } = position.coords;
       const apiKey =
         "5u1vBzlUZtkYZgd-AGdYh17UWZiTW69u70bpFgnGUEwwhCLXjJV9qoveHkK6QKyryr81NwG4YtckIsnfA88qa7GZAov95IvyOaJnjvArumbCjlvp2eXr3UOPrP8kWXYx";
-      const radius = 1609; // 1 mile in meters
+      const radius = 16090; // 1 mile in meters
 
       try {
         // Fetch restaurants with a minimum rating of 3.5
@@ -183,7 +183,6 @@ function displayRestaurantCard(restaurants) {
                         <h5>${restaurant.name}</h5>
                         <p>${restaurant.location.address1}, ${restaurant.location.city}</p>
                         <p>Rating: ${restaurant.rating}</p>
-                        <p>Random Value: ${randomValues[index]}</p>
                         <p>Range: ${ranges[index][0]} to ${ranges[index][1]}</p>
                     </li>
                 `
