@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camera</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="/camera/manifest.json">
     <meta name="theme-color" content="#007bff">
 </head>
 
@@ -31,9 +31,10 @@
         </div>
     </main>
 
-    <footer class="bg-dark text-white text-center py-3 mt-4">
-        <p>&copy; 2024 Your Name. All rights reserved.</p>
-    </footer>
+    <div id="installPrompt" class="alert alert-info text-center d-none" role="alert">
+        <p>Install this app for a better experience!</p>
+        <button id="installButton" class="btn btn-primary">Install</button>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
@@ -55,8 +56,6 @@
                 const mimeType = `video/webm; codecs=\"vp8\"`;
 
                 const stream = await getStream();
-                //document.getElementById("realtime").srcObject = stream;
-
                 const mediaSource = new MediaSource();
                 const delayed = document.getElementById("delayed");
                 delayed.src = URL.createObjectURL(mediaSource);
@@ -93,13 +92,37 @@
         // Register the service worker
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js').then(registration => {
+                navigator.serviceWorker.register('/camera/sw.js').then(registration => {
                     console.log('ServiceWorker registration successful:', registration);
                 }).catch(error => {
                     console.log('ServiceWorker registration failed:', error);
                 });
             });
         }
+
+        // Handle PWA installation
+        let deferredPrompt;
+        const installPrompt = document.getElementById('installPrompt');
+        const installButton = document.getElementById('installButton');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installPrompt.classList.remove('d-none');
+        });
+
+        installButton.addEventListener('click', () => {
+            installPrompt.classList.add('d-none');
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    console.log('User accepted the install prompt');
+                } else {
+                    console.log('User dismissed the install prompt');
+                }
+                deferredPrompt = null;
+            });
+        });
     </script>
 </body>
 
