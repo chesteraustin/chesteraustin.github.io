@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camera</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#007bff">
 </head>
 
 <body>
@@ -15,20 +17,17 @@
 
     <main class="container mt-4">
         <div class="container">
-            <section>
-                <p>Real-Time:</p>
-                <video id="realtime" autoplay muted controls playsinline></video>
-            </section>
+            <div class="slidecontainer my-4">
+                <label for="myRange">Set Delay (in seconds):</label>
+                <input type="range" min="0" max="10" value="7" class="slider" id="myRange">
+                <p>Current Delay: <span id="demo">7</span> seconds</p>
+            </div>
+            <button id="startButton" class="btn btn-primary">Start Camera</button>
+
             <section>
                 <p>Delayed:</p>
                 <video id="delayed" autoplay muted controls playsinline></video>
             </section>
-            <div class="slidecontainer my-4">
-                <label for="myRange">Set Delay (in seconds):</label>
-                <input type="range" min="1" max="10" value="7" class="slider" id="myRange">
-                <p>Current Delay: <span id="demo">7</span> seconds</p>
-            </div>
-            <button id="startButton" class="btn btn-primary">Start Camera</button>
         </div>
     </main>
 
@@ -56,7 +55,7 @@
                 const mimeType = `video/webm; codecs=\"vp8\"`;
 
                 const stream = await getStream();
-                document.getElementById("realtime").srcObject = stream;
+                //document.getElementById("realtime").srcObject = stream;
 
                 const mediaSource = new MediaSource();
                 const delayed = document.getElementById("delayed");
@@ -89,6 +88,17 @@
                 throw new Error("Your browser does not support camera access.");
             }
             return navigator.mediaDevices.getUserMedia({ video: true });
+        }
+
+        // Register the service worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').then(registration => {
+                    console.log('ServiceWorker registration successful:', registration);
+                }).catch(error => {
+                    console.log('ServiceWorker registration failed:', error);
+                });
+            });
         }
     </script>
 </body>
