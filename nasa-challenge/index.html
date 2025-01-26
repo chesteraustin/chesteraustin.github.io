@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NASA Challenge - Hubble's Night Sky Challenge</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script> 
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #markdown-output {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 16px;
+      background-color: #f9f9f9;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+    img {
+      width: 100%;
+    }
+    @media (min-width: 768px) {
+      img {
+        width: 50%;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="markdown-output">
+    <h2>HTML Output</h2>
+    <p>Your converted HTML will appear here...</p>
+  </div>
+
+  <script>
+    const markdownOutput = document.getElementById('markdown-output');
+    const markdownUrl = 'challenge.md'; // Replace with your Markdown file URL
+
+    window.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const response = await fetch(markdownUrl);
+        if (!response.ok) {
+          throw new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
+        }
+        const markdownContent = await response.text();
+        const htmlContent = marked.parse(markdownContent, {
+          highlight: function (code, lang) {
+            return hljs.highlightAuto(code, [lang]).value;
+          }
+        });
+        markdownOutput.innerHTML = htmlContent;
+        document.querySelectorAll('pre code').forEach((block) => {
+          hljs.highlightElement(block);
+        });
+      } catch (error) {
+        markdownOutput.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+      }
+    });
+  </script>
+</body>
+</html>
