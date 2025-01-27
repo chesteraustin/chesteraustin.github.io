@@ -34,6 +34,7 @@ TOTALEXP = 10. # Total Exposure Time in seconds
 ```
 
 ### M42: [Orion Nebula](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-42/)
+
 **Object Type:** Supernova Remnant
 
 **Distance:** 1,500 light years
@@ -63,7 +64,7 @@ OBJECT = 'M 42' # name or catalog number of object being imaged
 TOTALEXP = 10. # Total Exposure Time in seconds 
 ```
 
-### M43: [DeMairan's Nebula]()
+### M43: [DeMairan's Nebula](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-43/)
 
 **Object Type:** Diffuse Nebula
 
@@ -74,25 +75,25 @@ TOTALEXP = 10. # Total Exposure Time in seconds
 - [x] Processed
 - [x] Published
 
-![]()
+![M43 - DeMarian's Nebula](https://lh3.googleusercontent.com/pw/AP1GczMZskbziDaW50Zd8_9zTZ5uLES_1OtMGZHrxL6k0yLKp5HDqNj5L082EvqAyJYpOriW4yvZwvT1UVRd3V1RXqygVjNuP_MRsMeNvADnpCFTj1Cm3r-QS1vtC_p8YZOuwzIay7tvRCN15F4T6gLOoAgrww=w905-h1207-s-no-gm?authuser=0)
 
 **Date of latest observation:** January 8, 2025
 
 #### Selected FITS Header
 
 ``` python
-
+FOCALLEN = 250 # Focal length of telescope in mm
+APERTURE = 5. # Name of field of view aperture
+DATE-OBS= '2025-01-09T06:41:58.097978' # Image created time
+FILTER = 'LP' # Filter used when taking image
+INSTRUME = 'Seestar S50' # Camera model
+BAYERPAT = 'GRBG' # Bayer pattern
+GAIN = 80 # Gain Value
+FOCUSPOS = 1598 # Focuser position in steps
+TELESCOP = 'Seestar S50' # Telescope name
+OBJECT = 'M 43' # name or catalog number of object being imaged
+TOTALEXP = 10. # Total Exposure Time in seconds
 ```
-
-### M78
-Object Type: Diffuse Nebula
-Captured on:
-Device type:
-
-### M79
-Object Type: Globular Cluster
-Captured on:
-Device type:
 
 ### C 46: [Hubble's Variable Nebula](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-caldwell-catalog/caldwell-46/)
 
