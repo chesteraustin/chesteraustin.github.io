@@ -13,7 +13,7 @@
 - [x] Processed
 - [x] Published
 
-![M1 - Crab Nebula](https://lh3.googleusercontent.com/pw/AP1GczPMv7NfjLMFNvfcqMuZDL7mxrRCq72XTYWWN1NHDDr47coGbwTO51b_sWwLd3INsi9QOf7Rb6q1K7iDUCP0oqmMOj2XeA2i87KBP9Fb5lj77G5zqIOg6SXIZRaA13-wYUK_kQCs7KxW-90I-YMLrM6_dA=w573-h429-s-no-gm)
+![M1 - Crab Nebula](https://lh3.googleusercontent.com/pw/AP1GczMPaeMlG3h1F1SadTbXNL0cwkGcXPz0hGYQt7_rgJbYv_TUDbWusWNOtvG39bRvPiIWiqbdSPL6BZVpht0Lg_qAb5OTgX6kRZ88cIcZ9OeeclwUmOav7Zcmirie0RmFw6TonmtXe0TkdJvh8-Qt-4UPyA=w512-h684-s-no-gm?authuser=0)
 
 **Date of latest observation:** January 21, 2025
 
