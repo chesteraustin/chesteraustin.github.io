@@ -235,7 +235,7 @@ TOTALEXP = 10. # Total Exposure Time in seconds
 
 ![C 39 - Clown Nebula](https://lh3.googleusercontent.com/pw/AP1GczOfDsB7-MVg-lMbu2mVWrOPqVKMrFR_n-0z6rrtq2Ya1pcQ1Ln5DIoju0Xu3F3QljAb4Qym4JztqmmGjiHdOPuqdqYkejoO5PoZkr00_6_n3BLRoblcJjomQ1UgRM7gwcheQ9ziVVM6Ox6uu9YbQyo9Ag=w731-h975-s-no-gm)
 
-**Date of latest observation:** January 10, 2025
+**Date of latest observation:** February 22, 2025
 
 #### Selected FITS Header
 
