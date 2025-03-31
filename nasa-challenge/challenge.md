@@ -139,24 +139,24 @@ TOTALEXP = 10. # Total Exposure Time in seconds
 - [x] Processed
 - [x] Published
 
-![M 46 - Open Cluster]()
+![M 46 - Open Cluster](https://lh3.googleusercontent.com/pw/AP1GczOafaID-hjb_LBp6xS_nP4C8rsD1hg8ULYgB9Ox_eQWUBCUpGbftT48t2mKKYUVcsCzxOYb-Wdo6dXsP_-FjydqEJmpfgJH2Y-cvYv-9HNPN8nYXqRoFIb2D5EPtPolJm0jZpS7EWUrW3dtmL0MVnljZg=w687-h917-s-no-gm)
 
-**Date of latest observation:** January 10, 2025
+**Date of latest observation:** February 20, 2025
 
 #### Selected FITS Header
 
 ``` python
 FOCALLEN = 250 # Focal length of telescope in mm
 APERTURE = 5. # Name of field of view aperture
-DATE-OBS= '2025-01-10T05:04:32.934008' # Image created time
-FILTER = 'LP' # Filter used when taking image
+DATE-OBS= '2025-02-20T04:32:54.899423' / Image created time
+FILTER = 'IRCUT' # Filter used when taking image
 INSTRUME = 'Seestar S50' # Camera model
 BAYERPAT = 'GRBG' # Bayer pattern
 GAIN = 80 # Gain Value
-FOCUSPOS = 1598 # Focuser position in steps
-TELESCOP = 'Seestar S50' # Telescope name
-OBJECT = 'C 46' # name or catalog number of object being imaged
-TOTALEXP = 10. # Total Exposure Time in seconds 
+FOCUSPOS = 1610 # Focuser position in steps
+TELESCOP = 'S50_e6f9e091' # Telescope name
+OBJECT = 'M 46' # name or catalog number of object being imaged
+TOTALEXP = 10. # Total Exposure Time in seconds
 ```
 
 ### C7: [Spiral Galaxy](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-caldwell-catalog/caldwell-7/)
@@ -170,24 +170,24 @@ TOTALEXP = 10. # Total Exposure Time in seconds
 - [x] Processed
 - [x] Published
 
-![C7 - Spiral Galaxy]()
+![C7 - Spiral Galaxy](https://lh3.googleusercontent.com/pw/AP1GczMwjQd5j8itRxv6VgKkkzBSFhg_9V9WZTcdAiCqeBgQIzJQ7axX_k_RkViLcGeIwkxxh_JX3rGN-6qjwwNoZYh5v3usMHuRqvjbfZvpi_7eB0kgQZZZpBZMECOMtz5xjGCjm_C32-2MAppMzjVi0j6maw=w413-h551-s-no-gm)
 
-**Date of latest observation:** January 10, 2025
+**Date of latest observation:** February 25, 2025
 
 #### Selected FITS Header
 
 ``` python
 FOCALLEN = 250 # Focal length of telescope in mm
 APERTURE = 5. # Name of field of view aperture
-DATE-OBS= '2025-01-10T05:04:32.934008' # Image created time
-FILTER = 'LP' # Filter used when taking image
+DATE-OBS= '2025-02-25T05:27:46.079544' / Image created time
+FILTER = 'IRCUT' # Filter used when taking image
 INSTRUME = 'Seestar S50' # Camera model
 BAYERPAT = 'GRBG' # Bayer pattern
 GAIN = 80 # Gain Value
-FOCUSPOS = 1598 # Focuser position in steps
-TELESCOP = 'Seestar S50' # Telescope name
-OBJECT = 'C 46' # name or catalog number of object being imaged
-TOTALEXP = 10. # Total Exposure Time in seconds 
+FOCUSPOS = 1610 # Focuser position in steps
+TELESCOP = 'S50_e6f9e091' # Telescope name
+OBJECT = 'C 7' # name or catalog number of object being imaged
+TOTALEXP = 10. # Total Exposure Time in seconds
 ```
 
 ### C58: [Open Cluster](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-caldwell-catalog/caldwell-58/)
@@ -201,56 +201,26 @@ TOTALEXP = 10. # Total Exposure Time in seconds
 - [x] Processed
 - [x] Published
 
-![C58 - Open Cluster]()
+![C58 - Open Cluster](https://lh3.googleusercontent.com/pw/AP1GczOMEUatNgUkX_EKx_f7qDYIuYd9dcKoUPrA47kJ5KLgDFo31SfnUuzGONHXAlwmSWZKe_F0crM5PAdN-qIDkvB4L90FqD9BA0pXD-OLH0ECGj99el9VIL9tanAeQdE9gyF_9weTNV0iLVTC4CAyggsdOw=w507-h676-s-no-gm)
 
-**Date of latest observation:** January 10, 2025
-
-#### Selected FITS Header
-
-``` python
-FOCALLEN = 250 # Focal length of telescope in mm
-APERTURE = 5. # Name of field of view aperture
-DATE-OBS= '2025-01-10T05:04:32.934008' # Image created time
-FILTER = 'LP' # Filter used when taking image
-INSTRUME = 'Seestar S50' # Camera model
-BAYERPAT = 'GRBG' # Bayer pattern
-GAIN = 80 # Gain Value
-FOCUSPOS = 1598 # Focuser position in steps
-TELESCOP = 'Seestar S50' # Telescope name
-OBJECT = 'C 46' # name or catalog number of object being imaged
-TOTALEXP = 10. # Total Exposure Time in seconds 
-```
-
-### C25: [Globular Cluster](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-caldwell-catalog/caldwell-25/)
-
-**Object Type:** Globular Cluster
-
-**Distance:** 300,000 light years
-
-- [x] Observed
-- [x] Stacked
-- [x] Processed
-- [x] Published
-
-![C 25 - Globular Cluster]()
-
-**Date of latest observation:** January 10, 2025
+**Date of latest observation:** February 21, 2025
 
 #### Selected FITS Header
 
 ``` python
 FOCALLEN = 250 # Focal length of telescope in mm
 APERTURE = 5. # Name of field of view aperture
-DATE-OBS= '2025-01-10T05:04:32.934008' # Image created time
-FILTER = 'LP' # Filter used when taking image
+DATE-OBS= '2025-02-21T03:10:11.637953' # Image created time
+FILTER = 'IRCUT' # Filter used when taking image
 INSTRUME = 'Seestar S50' # Camera model
 BAYERPAT = 'GRBG' # Bayer pattern
 GAIN = 80 # Gain Value
-FOCUSPOS = 1598 # Focuser position in steps
-TELESCOP = 'Seestar S50' # Telescope name
-OBJECT = 'C 46' # name or catalog number of object being imaged
-TOTALEXP = 10. # Total Exposure Time in seconds 
+FOCUSPOS = 1615 # Focuser position in steps
+TELESCOP = 'S50_e6f9e091' # Telescope name
+OBJECT = 'C 58' # name or catalog number of object being imaged
+TOTALEXP = 10. # Total Exposure Time in seconds
 ```
+
 
 ### M39: [Clown Nebula](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-caldwell-catalog/caldwell-39/)
 
@@ -263,7 +233,7 @@ TOTALEXP = 10. # Total Exposure Time in seconds
 - [x] Processed
 - [x] Published
 
-![M 39 - Clown Nebula]()
+![C 39 - Clown Nebula](https://lh3.googleusercontent.com/pw/AP1GczOfDsB7-MVg-lMbu2mVWrOPqVKMrFR_n-0z6rrtq2Ya1pcQ1Ln5DIoju0Xu3F3QljAb4Qym4JztqmmGjiHdOPuqdqYkejoO5PoZkr00_6_n3BLRoblcJjomQ1UgRM7gwcheQ9ziVVM6Ox6uu9YbQyo9Ag=w731-h975-s-no-gm)
 
 **Date of latest observation:** January 10, 2025
 
@@ -272,13 +242,13 @@ TOTALEXP = 10. # Total Exposure Time in seconds
 ``` python
 FOCALLEN = 250 # Focal length of telescope in mm
 APERTURE = 5. # Name of field of view aperture
-DATE-OBS= '2025-01-10T05:04:32.934008' # Image created time
-FILTER = 'LP' # Filter used when taking image
+DATE-OBS= '2025-02-22T04:37:51.145051' # Image created time
+FILTER = 'IRCUT   ' # Filter used when taking image
 INSTRUME = 'Seestar S50' # Camera model
 BAYERPAT = 'GRBG' # Bayer pattern
 GAIN = 80 # Gain Value
-FOCUSPOS = 1598 # Focuser position in steps
-TELESCOP = 'Seestar S50' # Telescope name
-OBJECT = 'C 46' # name or catalog number of object being imaged
-TOTALEXP = 10. # Total Exposure Time in seconds 
+FOCUSPOS = 1614 # Focuser position in steps
+TELESCOP = 'S50_e6f9e091' # Telescope name
+OBJECT = 'C 39' # name or catalog number of object being imaged
+TOTALEXP = 10. # Total Exposure Time in seconds
 ```
