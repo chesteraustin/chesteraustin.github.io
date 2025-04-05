@@ -252,3 +252,53 @@ TELESCOP = 'S50_e6f9e091' # Telescope name
 OBJECT = 'C 39' # name or catalog number of object being imaged
 TOTALEXP = 10. # Total Exposure Time in seconds
 ```
+
+## March 2025
+
+### M48: [Open Cluster](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-48/)
+**Object Type:** Open Cluster
+
+**Distance:** 2,500 light years
+
+- [x] Observed
+- [x] Stacked
+- [x] Processed
+- [x] Published
+
+![M 48 - Open Cluster](https://lh3.googleusercontent.com/pw/AP1GczO-IiYjqbadXRLcb4Ujcyqn6Z0GUTyZ-pj0s5o6SRfmawkN0YU2kiudv6nJ3JqqWB_Bd9A6OdGQgQ4aOIWrCYu8Xplvvf4p96TojsmD8-smemWc-0HNmdI70uecfcwO06Sq1cHEkGslyKvl6g-RtiW5zA=w772-h1031-s-no-gm?authuser=0)
+
+**Date of latest observation:** March 16, 2025
+
+#### Selected FITS Header
+
+### M67: [King Cobra](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-67/)
+**Object Type:** Open Cluster
+
+**Distance:** 2,800 light years
+
+- [x] Observed
+- [x] Stacked
+- [x] Processed
+- [x] Published
+
+![M 67 - Open Cluster](https://lh3.googleusercontent.com/pw/AP1GczN4NkLuar8JzDas8SiEEH00lbripc9Mhrih9NzIyhTlkJqkDGh8zzpLZS5_RHMa2qvTzWx30jLX1-aq_DtZYsG-fZRA9Fd6s-UjDXQBv1PKp20lHzYDpzffObmVB9383O_lLNB_Xnqc3CPCUa9Ckcxaqw=w654-h872-s-no-gm?authuser=0)
+
+**Date of latest observation:** March 31, 2025
+
+#### Selected FITS Header
+
+### C48: [Spiral Galaxy](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-caldwell-catalog/caldwell-48/)
+**Object Type:** Spiral Galaxy
+
+**Distance:** 67 million light years
+
+- [x] Observed
+- [x] Stacked
+- [x] Processed
+- [x] Published
+
+![C 48 - Spiral Galaxy](https://lh3.googleusercontent.com/pw/AP1GczPzOp3UkuyAj8hzTLkvQOkaEshB7LR96bD9Bbw4LmRET2BdtzB2dzPnets2QXQ0gdyt6e4wNpZKYdKnqmb6EQ0y-KHqly5lzxAKmv1Uf4a92Yh_aKxQiJHbJk1_m0phUVf-xzCQaRB24lkVVh0OyVWZsA=w694-h925-s-no-gm?authuser=0)
+
+**Date of latest observation:** March 31, 2025
+
+#### Selected FITS Header
