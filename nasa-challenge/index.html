@@ -69,6 +69,34 @@
         markdownOutput.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
       }
     });
+    // Add click-to-collapse functionality for each H3 and its following content
+    const headers = markdownOutput.querySelectorAll('h3');
+    headers.forEach(header => {
+      // Create a wrapper div for collapsible content
+      let sibling = header.nextElementSibling;
+      const wrapper = document.createElement('div');
+      wrapper.classList.add('collapsible-content');
+
+      // Move all siblings until the next H3 into the wrapper
+      while (sibling && sibling.tagName !== 'H3') {
+        const next = sibling.nextElementSibling;
+        wrapper.appendChild(sibling);
+        sibling = next;
+      }
+
+      header.insertAdjacentElement('afterend', wrapper);
+
+      // Set initial state
+      wrapper.style.display = 'none';
+      header.style.cursor = 'pointer';
+      header.style.backgroundColor = '#f0f0f0';
+      header.style.padding = '5px';
+
+      // Toggle on click
+      header.addEventListener('click', () => {
+        wrapper.style.display = wrapper.style.display === 'none' ? 'block' : 'none';
+      });
+    });
   </script>
 </body>
 </html>
