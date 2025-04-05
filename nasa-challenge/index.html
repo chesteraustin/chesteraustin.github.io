@@ -70,7 +70,7 @@
       }
     });
     // Add click-to-collapse functionality for each H3 and its following content
-    const headers = markdownOutput.querySelectorAll('h3');
+    const headers = markdownOutput.querySelectorAll('h2');
     headers.forEach(header => {
       // Create a wrapper div for collapsible content
       let sibling = header.nextElementSibling;
@@ -78,7 +78,7 @@
       wrapper.classList.add('collapsible-content');
 
       // Move all siblings until the next H3 into the wrapper
-      while (sibling && sibling.tagName !== 'H3') {
+      while (sibling && sibling.tagName !== 'H2') {
         const next = sibling.nextElementSibling;
         wrapper.appendChild(sibling);
         sibling = next;
