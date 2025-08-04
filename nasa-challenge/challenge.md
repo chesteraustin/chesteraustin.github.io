@@ -6,7 +6,7 @@
 
 **Object Type:** Supernova Remnant
 
-**Distance:** 6,500 light years
+**Distance:** 6,500 light-years
 
 - [x] Observed
 - [x] Stacked
@@ -37,7 +37,7 @@ TOTALEXP = 10. # Total Exposure Time in seconds
 
 **Object Type:** Supernova Remnant
 
-**Distance:** 1,500 light years
+**Distance:** 1,500 light-years
 
 - [x] Observed
 - [x] Stacked
@@ -68,7 +68,7 @@ TOTALEXP = 10. # Total Exposure Time in seconds
 
 **Object Type:** Diffuse Nebula
 
-**Distance:** 1,600 light years
+**Distance:** 1,600 light-years
 
 - [x] Observed
 - [x] Stacked
@@ -99,7 +99,7 @@ TOTALEXP = 10. # Total Exposure Time in seconds
 
 **Object Type:** Reflection Nebula
 
-**Distance:** 2,500 light years
+**Distance:** 2,500 light-years
 
 - [x] Observed
 - [x] Stacked
@@ -132,7 +132,7 @@ TOTALEXP = 10. # Total Exposure Time in seconds
 
 **Object Type:** Open Cluster
 
-**Distance:** 5,400 light years
+**Distance:** 5,400 light-years
 
 - [x] Observed
 - [x] Stacked
@@ -163,7 +163,7 @@ TOTALEXP = 10. # Total Exposure Time in seconds
 
 **Object Type:** Spiral Galaxy
 
-**Distance:** 12,000,000 (12 million) light years
+**Distance:** 12,000,000 (12 million) light-years
 
 - [x] Observed
 - [x] Stacked
@@ -194,7 +194,7 @@ TOTALEXP = 10. # Total Exposure Time in seconds
 
 **Object Type:** Open Cluster
 
-**Distance:** 3,700 light years
+**Distance:** 3,700 light-years
 
 - [x] Observed
 - [x] Stacked
@@ -226,7 +226,7 @@ TOTALEXP = 10. # Total Exposure Time in seconds
 
 **Object Type:** Planetary Nebula
 
-**Distance:** 5,000 light years
+**Distance:** 5,000 light-years
 
 - [x] Observed
 - [x] Stacked
@@ -258,7 +258,7 @@ TOTALEXP = 10. # Total Exposure Time in seconds
 ### M48: [Open Cluster](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-48/)
 **Object Type:** Open Cluster
 
-**Distance:** 2,500 light years
+**Distance:** 2,500 light-years
 
 - [x] Observed
 - [x] Stacked
@@ -274,7 +274,7 @@ TOTALEXP = 10. # Total Exposure Time in seconds
 ### M67: [King Cobra](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-67/)
 **Object Type:** Open Cluster
 
-**Distance:** 2,800 light years
+**Distance:** 2,800 light-years
 
 - [x] Observed
 - [x] Stacked
@@ -288,17 +288,106 @@ TOTALEXP = 10. # Total Exposure Time in seconds
 #### Selected FITS Header
 
 ### C48: [Spiral Galaxy](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-caldwell-catalog/caldwell-48/)
+
+## April 2025
+
+### M65: [Spiral Galaxy](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-65/)
+
 **Object Type:** Spiral Galaxy
 
-**Distance:** 67 million light years
+**Distance:** 35 million light-years
 
 - [x] Observed
 - [x] Stacked
 - [x] Processed
 - [x] Published
 
-![C 48 - Spiral Galaxy](https://lh3.googleusercontent.com/pw/AP1GczPzOp3UkuyAj8hzTLkvQOkaEshB7LR96bD9Bbw4LmRET2BdtzB2dzPnets2QXQ0gdyt6e4wNpZKYdKnqmb6EQ0y-KHqly5lzxAKmv1Uf4a92Yh_aKxQiJHbJk1_m0phUVf-xzCQaRB24lkVVh0OyVWZsA=w694-h925-s-no-gm?authuser=0)
+![M 65 - Spiral Galaxy]()
 
-**Date of latest observation:** March 31, 2025
+**Date of latest observation:** April 6, 2025
 
-#### Selected FITS Header
+### M66: [Spiral Galaxy](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-66/)
+
+**Object Type:** Spiral Galaxy
+
+**Distance:** 35 million light-years
+
+- [x] Observed
+- [x] Stacked
+- [x] Processed
+- [x] Published
+
+![M 66 - Spiral Galaxy]()
+
+**Date of latest observation:** April 6, 2025
+
+### M81: [Bode's Galaxy](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/caldwell-40/)
+
+**Object Type:** Spiral Galaxy
+
+**Distance:** 70 million light-years
+
+- [x] Observed
+- [x] Stacked
+- [x] Processed
+- [x] Published
+
+![M 66 - Spiral Galaxy]()
+
+**Date of latest observation:** April 20, 2025
+
+### M 82: [Cigar Galaxy](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/caldwell-53/)
+
+**Object Type:** Lenticular Galaxy
+
+**Distance:** 32 million light-years
+
+- [x] Observed
+- [x] Stacked
+- [x] Processed
+- [x] Published
+
+![C 53 - Lenticular Galaxy]()
+
+**Date of latest observation:** April 10, 2025
+
+## May 2025
+
+### M53: [Whirlpool Galaxy](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-53/)
+
+**Object Type:** Spiral Galaxy
+
+**Distance:** 70 million light-years
+
+- [x] Observed
+- [x] Stacked
+- [x] Processed
+- [x] Published
+
+![M 66 - Spiral Galaxy]()
+
+**Date of latest observation:** April 20, 2025
+
+### M64: [Black Eye Galaxy](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-64/)
+
+### M104: [Sombrero Galaxy](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-104/)
+
+## June 2025
+
+### M3: [Globular Cluster](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-3/)
+
+### M83: [Southern Pinwheel](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-83/)
+
+### C45: [Spiral Galaxy](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/caldwell-45/)
+
+## July 2025
+
+### M33: [Globular Cluster](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-33/)
+
+### M92: [Globular Cluster](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-92/)
+
+### M4: [Globular Cluster](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-4/)
+
+### M62: [Globular Cluster](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-62/)
+
+### M107: [Globular Cluster](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-107/)
