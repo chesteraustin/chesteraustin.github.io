@@ -821,3 +821,96 @@ TELESCOP = 'S50_e6f9e091' # Telescope name
 OBJECT = 'M 8     ' # name or catalog number of object being imaged
 TOTALEXP = 10. # Total Exposure Time in seconds
 ```
+
+### M16: [Eagle Nebula](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-16/)
+
+**Object Type:** Emission Nebula
+
+**Distance:** 7,000 light-years
+
+- [X] Observed
+- [X] Stacked
+- [X] Processed
+- [X] Published
+
+![M16 - Eagle Nebula](https://lh3.googleusercontent.com/pw/AP1GczNId7JL4PGwFLJqFGWt5hYyYbb9HO4a5mnbxnxVD5QfFj0kXdPa8Cgx5dKa7pHDtG90dI3HJRv8X0LAOg42oupSw5mbSbwochD_0XgL8NfnV0RvtIuMHrKXqI4UYr4hxsNQgpuev1NbfBa5QfPNZtiSvA=w819-h1093-s-no-gm?authuser=0)
+
+**Date of latest observation:** August 20, 2025
+
+#### Selected FITS Header
+
+```python
+FOCALLEN = 250 # Focal length of telescope in mm
+APERTURE = 5. # Name of field of view aperture
+DATE-OBS= '2025-08-18T03:27:37.678290' # Image created time
+FILTER = 'LP      ' # Filter used when taking image
+INSTRUME = 'Seestar S50' # Camera model
+BAYERPAT = 'GRBG    ' # Bayer pattern
+GAIN = 80 # Gain Value
+FOCUSPOS = 1626 # Focuser position in steps
+TELESCOP = 'S50_e6f9e091' # Telescope name
+OBJECT = 'M 16    ' # name or catalog number of object being imaged
+TOTALEXP = 10. # Total Exposure Time in seconds
+```
+
+### M22: [Sagittarius Cluster](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-22/)
+
+**Object Type:** Globular Cluster
+
+**Distance:** 10,000 light-years
+
+- [X] Observed
+- [X] Stacked
+- [X] Processed
+- [X] Published
+
+![M22 - Sagittarius Cluster](https://lh3.googleusercontent.com/pw/AP1GczNhmWou5TpcfTnUlCZr9IZXiELLDJEugwJJrWjTsIqpTXi4hsi3mGoryyJLxAOSAj515VkDtxH7g9zg0ixRsGGsip78D6gNGXLMWeJler4hom2kFtBIgC-QNA9D-q5DNVK3h4syyfAvOXZQnvW0q2ijQA=w960-h1279-s-no-gm?authuser=0)
+
+**Date of latest observation:** August 22, 2025
+
+#### Selected FITS Header
+
+```python
+FOCALLEN = 250 # Focal length of telescope in mm
+APERTURE = 5. # Name of field of view aperture
+DATE-OBS= '2025-08-23T05:03:12.365863' # Image created time
+FILTER = 'IRCUT   ' # Filter used when taking image
+INSTRUME = 'Seestar S50' # Camera model
+BAYERPAT = 'GRBG    ' # Bayer pattern
+GAIN = 80 # Gain Value
+FOCUSPOS = 1626 # Focuser position in steps
+TELESCOP = 'S50_e6f9e091' # Telescope name
+OBJECT = 'M 22    ' # name or catalog number of object being imaged
+TOTALEXP = 10. # Total Exposure Time in seconds
+```
+
+### M20: [Trifid Nebula](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-20/)
+
+**Object Type:** Emission Nebula
+
+**Distance:** 9,000 light-years
+
+- [X] Observed
+- [X] Stacked
+- [X] Processed
+- [X] Published
+
+![M20 - Trifid Nebula](https://lh3.googleusercontent.com/pw/AP1GczPZYRyv1tLHTZxBIkJ_-t_ldSM4_Yh8k90msQbKOTcVhRmcAzQp9Y4uxEZRHfcrvOS41pmo6XyTIVUXE3j3lrX8tf_1zgaTlIyJBoUhp_fTX2lpImXbnbhJ5QPZFLEN3KjtwQrnmK32cD-yoRqB8UPejw=w959-h1279-s-no-gm?authuser=0)
+
+**Date of latest observation:** August 19, 2025
+
+#### Selected FITS Header
+
+```python
+FOCALLEN = 250 # Focal length of telescope in mm
+APERTURE = 5. # Name of field of view aperture
+DATE-OBS= '2025-08-20T04:30:51.053966' # Image created time
+FILTER = 'LP      ' # Filter used when taking image
+INSTRUME = 'Seestar S50' # Camera model
+BAYERPAT = 'GRBG    ' # Bayer pattern
+GAIN = 80 # Gain Value
+FOCUSPOS = 1626 # Focuser position in steps
+TELESCOP = 'S50_e6f9e091' # Telescope name
+OBJECT = 'M 20    ' # name or catalog number of object being imaged
+TOTALEXP = 10. # Total Exposure Time in seconds
+```
