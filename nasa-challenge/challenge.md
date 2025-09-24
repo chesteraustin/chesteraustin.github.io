@@ -914,3 +914,162 @@ TELESCOP = 'S50_e6f9e091' # Telescope name
 OBJECT = 'M 20    ' # name or catalog number of object being imaged
 TOTALEXP = 10. # Total Exposure Time in seconds
 ```
+
+## September 2025
+
+### M27: [Dumbbell Nebula](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-27/)
+
+**Object Type:** Planetary Nebula
+
+**Distance:** 1,200 light-years
+
+- [ ] Observed
+- [ ] Stacked
+- [ ] Processed
+- [ ] Published
+
+![M27 - Dumbbell Nebula](<!-- TODO: Add image URL -->)
+
+**Date of latest observation:** <!-- TODO: Add observation date -->
+
+#### Selected FITS Header
+
+```python
+FOCALLEN = 250 # Focal length of telescope in mm
+APERTURE = 5. # Name of field of view aperture
+DATE-OBS= 'TBD' # Image created time
+FILTER = 'TBD' # Filter used when taking image
+INSTRUME = 'Seestar S50' # Camera model
+BAYERPAT = 'GRBG' # Bayer pattern
+GAIN = 80 # Gain Value
+FOCUSPOS = TBD # Focuser position in steps
+TELESCOP = 'S50_e6f9e091' # Telescope name
+OBJECT = 'M 27' # name or catalog number of object being imaged
+TOTALEXP = 10. # Total Exposure Time in seconds
+```
+
+### M15: [Great Pegasus Cluster](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-15/)
+
+**Object Type:** Globular Cluster
+
+**Distance:** 33,600 light-years
+
+- [ ] Observed
+- [ ] Stacked
+- [ ] Processed
+- [ ] Published
+
+![M15 - Great Pegasus Cluster](<!-- TODO: Add image URL -->)
+
+**Date of latest observation:** <!-- TODO: Add observation date -->
+
+#### Selected FITS Header
+
+```python
+FOCALLEN = 250 # Focal length of telescope in mm
+APERTURE = 5. # Name of field of view aperture
+DATE-OBS= 'TBD' # Image created time
+FILTER = 'TBD' # Filter used when taking image
+INSTRUME = 'Seestar S50' # Camera model
+BAYERPAT = 'GRBG' # Bayer pattern
+GAIN = 80 # Gain Value
+FOCUSPOS = TBD # Focuser position in steps
+TELESCOP = 'S50_e6f9e091' # Telescope name
+OBJECT = 'M 15' # name or catalog number of object being imaged
+TOTALEXP = 10. # Total Exposure Time in seconds
+```
+
+### M55: [Specter Cluster](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-55/)
+
+**Object Type:** Globular Cluster
+
+**Distance:** 20,000 light-years
+
+- [ ] Observed
+- [ ] Stacked
+- [ ] Processed
+- [ ] Published
+
+![M55 - Globular Cluster](<!-- TODO: Add image URL -->)
+
+**Date of latest observation:** <!-- TODO: Add observation date -->
+
+#### Selected FITS Header
+
+```python
+FOCALLEN = 250 # Focal length of telescope in mm
+APERTURE = 5. # Name of field of view aperture
+DATE-OBS= 'TBD' # Image created time
+FILTER = 'TBD' # Filter used when taking image
+INSTRUME = 'Seestar S50' # Camera model
+BAYERPAT = 'GRBG' # Bayer pattern
+GAIN = 80 # Gain Value
+FOCUSPOS = TBD # Focuser position in steps
+TELESCOP = 'S50_e6f9e091' # Telescope name
+OBJECT = 'M 55' # name or catalog number of object being imaged
+TOTALEXP = 10. # Total Exposure Time in seconds
+```
+
+### C57: [Barnard's Galaxy](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-caldwell-catalog/caldwell-57/)
+
+**Object Type:** Irregular Dwarf Galaxy
+
+**Distance:** 2 million light-years
+
+- [ ] Observed
+- [ ] Stacked
+- [ ] Processed
+- [ ] Published
+
+![C57 - Barnard's Galaxy](<!-- TODO: Add image URL -->)
+
+**Date of latest observation:** <!-- TODO: Add observation date -->
+
+#### Selected FITS Header
+
+```python
+FOCALLEN = 250 # Focal length of telescope in mm
+APERTURE = 5. # Name of field of view aperture
+DATE-OBS= 'TBD' # Image created time
+FILTER = 'TBD' # Filter used when taking image
+INSTRUME = 'Seestar S50' # Camera model
+BAYERPAT = 'GRBG' # Bayer pattern
+GAIN = 80 # Gain Value
+FOCUSPOS = TBD # Focuser position in steps
+TELESCOP = 'S50_e6f9e091' # Telescope name
+OBJECT = 'C 57' # name or catalog number of object being imaged
+TOTALEXP = 10. # Total Exposure Time in seconds
+```
+
+### C27: [Crescent Nebula](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-caldwell-catalog/caldwell-27/)
+
+**Object Type:** Planetary Nebula
+
+**Distance:** 4,700 light-years
+
+- [ ] Observed
+- [ ] Stacked
+- [ ] Processed
+- [ ] Published
+
+![C27 - Crescent Nebula](<!-- TODO: Add image URL -->)
+
+**Date of latest observation:** <!-- TODO: Add observation date -->
+
+#### Selected FITS Header
+
+```python
+FOCALLEN = 250 # Focal length of telescope in mm
+APERTURE = 5. # Name of field of view aperture
+DATE-OBS= 'TBD' # Image created time
+FILTER = 'TBD' # Filter used when taking image
+INSTRUME = 'Seestar S50' # Camera model
+BAYERPAT = 'GRBG' # Bayer pattern
+GAIN = 80 # Gain Value
+FOCUSPOS = TBD # Focuser position in steps
+TELESCOP = 'S50_e6f9e091' # Telescope name
+OBJECT = 'C 27' # name or catalog number of object being imaged
+TOTALEXP = 10. # Total Exposure Time in seconds
+```
+
+## October 2025
