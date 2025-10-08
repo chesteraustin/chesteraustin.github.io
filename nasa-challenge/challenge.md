@@ -64,7 +64,7 @@ OBJECT = 'M 42' # name or catalog number of object being imaged
 TOTALEXP = 10. # Total Exposure Time in seconds 
 ```
 
-### M43: [DeMairan's Nebula](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-43/)
+### M43: [De Mairan's Nebula](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-43/)
 
 **Object Type:** Diffuse Nebula
 
@@ -148,7 +148,7 @@ TOTALEXP = 10. # Total Exposure Time in seconds
 ``` python
 FOCALLEN = 250 # Focal length of telescope in mm
 APERTURE = 5. # Name of field of view aperture
-DATE-OBS= '2025-02-20T04:32:54.899423' / Image created time
+DATE-OBS= '2025-02-20T04:32:54.899423' # Image created time
 FILTER = 'IRCUT' # Filter used when taking image
 INSTRUME = 'Seestar S50' # Camera model
 BAYERPAT = 'GRBG' # Bayer pattern
@@ -179,7 +179,7 @@ TOTALEXP = 10. # Total Exposure Time in seconds
 ``` python
 FOCALLEN = 250 # Focal length of telescope in mm
 APERTURE = 5. # Name of field of view aperture
-DATE-OBS= '2025-02-25T05:27:46.079544' / Image created time
+DATE-OBS= '2025-02-25T05:27:46.079544' # Image created time
 FILTER = 'IRCUT' # Filter used when taking image
 INSTRUME = 'Seestar S50' # Camera model
 BAYERPAT = 'GRBG' # Bayer pattern
@@ -415,7 +415,7 @@ TOTALEXP = 10. # Total Exposure Time in seconds
 
 **Object Type:** Spiral Galaxy
 
-**Distance:** 70 million light-years
+**Distance:** 11.6 million light-years
 
 - [x] Observed
 - [x] Stacked
@@ -632,7 +632,7 @@ OBJECT = 'M 83    ' # name or catalog number of object being imaged
 TOTALEXP = 10. # Total Exposure Time in seconds
 ```
 
-### C45: [Spiral Galaxy](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/caldwell-45/)
+### C45: [Spiral Galaxy](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-caldwell-catalog/caldwell-45/)
 
 **Object Type:** Spiral Galaxy
 
@@ -762,7 +762,7 @@ TOTALEXP = 10. # Total Exposure Time in seconds
 
 **Object Type:** Globular Cluster
 
-**Distance:** 200,000 light-years
+**Distance:** 20,000 light-years
 
 - [x] Observed
 - [x] Stacked
@@ -923,28 +923,28 @@ TOTALEXP = 10. # Total Exposure Time in seconds
 
 **Distance:** 1,200 light-years
 
-- [ ] Observed
-- [ ] Stacked
-- [ ] Processed
-- [ ] Published
+- [X] Observed
+- [X] Stacked
+- [X] Processed
+- [X] Published
 
-![M27 - Dumbbell Nebula](<!-- TODO: Add image URL -->)
+![M27 - Dumbbell Nebula](https://lh3.googleusercontent.com/pw/AP1GczPxOEF7ZGBlWQHXu6MvSBS14ICweDDzXpeiCCaUzo1kuXzk5EuiODOjIq9kLiteJICyDsYuPoIv3b_N4mJGU3aMnvP6-zs4_tiiD2FreSXDXgaVwDyvhJfSzTSVFQTeSRTR4g2cmPh2gjF-Zmn1VExpSA=w690-h919-s-no-gm?authuser=0)
 
-**Date of latest observation:** <!-- TODO: Add observation date -->
+**Date of latest observation:** September 7, 2025
 
 #### Selected FITS Header
 
 ```python
-FOCALLEN = 250 # Focal length of telescope in mm
+FOCALLEN = 250. # Focal length of telescope in mm
 APERTURE = 5. # Name of field of view aperture
-DATE-OBS= 'TBD' # Image created time
-FILTER = 'TBD' # Filter used when taking image
+DATE-OBS= '2025-09-07T04:36:45.117060' # Image created time
+FILTER = 'LP      ' # Filter used when taking image
 INSTRUME = 'Seestar S50' # Camera model
-BAYERPAT = 'GRBG' # Bayer pattern
+BAYERPAT = 'GRBG    ' # Bayer pattern
 GAIN = 80 # Gain Value
-FOCUSPOS = TBD # Focuser position in steps
+FOCUSPOS = 1627 # Focuser position in steps
 TELESCOP = 'S50_e6f9e091' # Telescope name
-OBJECT = 'M 27' # name or catalog number of object being imaged
+OBJECT = 'M 27    ' # name or catalog number of object being imaged
 TOTALEXP = 10. # Total Exposure Time in seconds
 ```
 
@@ -954,122 +954,58 @@ TOTALEXP = 10. # Total Exposure Time in seconds
 
 **Distance:** 33,600 light-years
 
-- [ ] Observed
-- [ ] Stacked
-- [ ] Processed
-- [ ] Published
+- [X] Observed
+- [X] Stacked
+- [X] Processed
+- [X] Published
 
-![M15 - Great Pegasus Cluster](<!-- TODO: Add image URL -->)
+![M15 - Great Pegasus Cluster](https://lh3.googleusercontent.com/pw/AP1GczN_C7_cZ3a6Xvhpogl-7UMhilIhHJlWIGKDp7i58g1i9lPMA7vCQq8QqyPvMDVZ1kgmzD7I4oi97Q4PXovHtcJhGLVMPSxhPj2nW6EPUt2NPGtwu1l-6MbkPY_DNzgafVo3f_qVkPmWh3AwgJSVGxla5w=w689-h919-s-no-gm?authuser=0)
 
-**Date of latest observation:** <!-- TODO: Add observation date -->
-
-#### Selected FITS Header
-
-```python
-FOCALLEN = 250 # Focal length of telescope in mm
-APERTURE = 5. # Name of field of view aperture
-DATE-OBS= 'TBD' # Image created time
-FILTER = 'TBD' # Filter used when taking image
-INSTRUME = 'Seestar S50' # Camera model
-BAYERPAT = 'GRBG' # Bayer pattern
-GAIN = 80 # Gain Value
-FOCUSPOS = TBD # Focuser position in steps
-TELESCOP = 'S50_e6f9e091' # Telescope name
-OBJECT = 'M 15' # name or catalog number of object being imaged
-TOTALEXP = 10. # Total Exposure Time in seconds
-```
-
-### M55: [Specter Cluster](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-55/)
-
-**Object Type:** Globular Cluster
-
-**Distance:** 20,000 light-years
-
-- [ ] Observed
-- [ ] Stacked
-- [ ] Processed
-- [ ] Published
-
-![M55 - Globular Cluster](<!-- TODO: Add image URL -->)
-
-**Date of latest observation:** <!-- TODO: Add observation date -->
+**Date of latest observation:** September 4, 2025
 
 #### Selected FITS Header
 
 ```python
-FOCALLEN = 250 # Focal length of telescope in mm
+FOCALLEN = 250. # Focal length of telescope in mm
 APERTURE = 5. # Name of field of view aperture
-DATE-OBS= 'TBD' # Image created time
-FILTER = 'TBD' # Filter used when taking image
+DATE-OBS= '2025-09-04T03:41:28.003747' # Image created time
+FILTER = 'IRCUT   ' # Filter used when taking image
 INSTRUME = 'Seestar S50' # Camera model
-BAYERPAT = 'GRBG' # Bayer pattern
+BAYERPAT = 'GRBG    ' # Bayer pattern
 GAIN = 80 # Gain Value
-FOCUSPOS = TBD # Focuser position in steps
+FOCUSPOS = 1628 # Focuser position in steps
 TELESCOP = 'S50_e6f9e091' # Telescope name
-OBJECT = 'M 55' # name or catalog number of object being imaged
-TOTALEXP = 10. # Total Exposure Time in seconds
+OBJECT = 'M 15    ' # name or catalog number of object being imaged
+TOTALEXP = 10. # Total Exposure Time in seconds  
 ```
 
-### C57: [Barnard's Galaxy](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-caldwell-catalog/caldwell-57/)
-
-**Object Type:** Irregular Dwarf Galaxy
-
-**Distance:** 2 million light-years
-
-- [ ] Observed
-- [ ] Stacked
-- [ ] Processed
-- [ ] Published
-
-![C57 - Barnard's Galaxy](<!-- TODO: Add image URL -->)
-
-**Date of latest observation:** <!-- TODO: Add observation date -->
-
-#### Selected FITS Header
-
-```python
-FOCALLEN = 250 # Focal length of telescope in mm
-APERTURE = 5. # Name of field of view aperture
-DATE-OBS= 'TBD' # Image created time
-FILTER = 'TBD' # Filter used when taking image
-INSTRUME = 'Seestar S50' # Camera model
-BAYERPAT = 'GRBG' # Bayer pattern
-GAIN = 80 # Gain Value
-FOCUSPOS = TBD # Focuser position in steps
-TELESCOP = 'S50_e6f9e091' # Telescope name
-OBJECT = 'C 57' # name or catalog number of object being imaged
-TOTALEXP = 10. # Total Exposure Time in seconds
-```
-
-### C27: [Crescent Nebula](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-caldwell-catalog/caldwell-27/)
+### C55: [Saturn Nebula](https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-caldwell-catalog/caldwell-55/)
 
 **Object Type:** Planetary Nebula
 
-**Distance:** 4,700 light-years
+**Distance:** 1,400 light-years
 
-- [ ] Observed
-- [ ] Stacked
-- [ ] Processed
-- [ ] Published
+- [X] Observed
+- [X] Stacked
+- [X] Processed
+- [X] Published
 
-![C27 - Crescent Nebula](<!-- TODO: Add image URL -->)
+![C55 - Saturn Nebula](https://lh3.googleusercontent.com/pw/AP1GczOB8IqnrHVdbw19gdIZbAM9J9oW2rn6PFtCEVZ7_9LQU--P7T5AyMV9h-gF9Ys475vE16vhqgBpcQmQZn2cJhf6kv93Jf_mw2o4Hm5P6kY72nDD99KXe6hAR1V6OcJsTAfqkF4dT66RlkVUUZD6OmgLlg=w658-h877-s-no-gm?authuser=0)
 
-**Date of latest observation:** <!-- TODO: Add observation date -->
+**Date of latest observation:** September 3, 2025
 
 #### Selected FITS Header
 
 ```python
-FOCALLEN = 250 # Focal length of telescope in mm
+FOCALLEN = 250. # Focal length of telescope in mm
 APERTURE = 5. # Name of field of view aperture
-DATE-OBS= 'TBD' # Image created time
-FILTER = 'TBD' # Filter used when taking image
+DATE-OBS= '2025-09-03T05:00:03.644940' # Image created time
+FILTER = 'IRCUT   ' # Filter used when taking image
 INSTRUME = 'Seestar S50' # Camera model
-BAYERPAT = 'GRBG' # Bayer pattern
+BAYERPAT = 'GRBG    ' # Bayer pattern
 GAIN = 80 # Gain Value
-FOCUSPOS = TBD # Focuser position in steps
+FOCUSPOS = 1620 # Focuser position in steps
 TELESCOP = 'S50_e6f9e091' # Telescope name
-OBJECT = 'C 27' # name or catalog number of object being imaged
+OBJECT = 'C 55    ' # name or catalog number of object being imaged
 TOTALEXP = 10. # Total Exposure Time in seconds
 ```
-
-## October 2025
