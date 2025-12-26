@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* Cover Image */
+        .cover-image {
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .cover-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cover-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .cover-text h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .cover-text p {
+            font-size: 1.2em;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 40px 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .section-title {
+            font-size: 2em;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .section-description {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        /* Carousel Styles */
+        .carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 8px;
+            min-height: 300px;
+        }
+
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+            object-fit: contain;
+            display: block;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 20px;
+            font-size: 0.95em;
+        }
+
+        /* Carousel Navigation */
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            font-size: 2em;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            z-index: 10;
+        }
+
+        .carousel-button:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        .carousel-button.prev {
+            left: 10px;
+        }
+
+        .carousel-button.next {
+            right: 10px;
+        }
+
+        /* Carousel Indicators */
+        .carousel-indicators {
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        .indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .indicator.active {
+            background-color: #2c3e50;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: opacity 0.3s;
+            z-index: 1001;
+        }
+
+        .lightbox-close:hover {
+            opacity: 0.7;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            font-size: 2em;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            z-index: 1001;
+            color: #333;
+        }
+
+        .lightbox-nav:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        .lightbox-nav.prev {
+            left: 20px;
+        }
+
+        .lightbox-nav.next {
+            right: 20px;
+        }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 4px;
+            max-width: 80%;
+            text-align: center;
+        }
+
+        /* Clickable cursor for images */
+        .carousel-slide img {
+            cursor: pointer;
+        }
+
+        /* Closing Image */
+        .closing-image {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .closing-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .closing-text {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            font-size: 1.5em;
+            padding: 0 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cover-image {
+                height: 300px;
+            }
+
+            .cover-text h1 {
+                font-size: 2em;
+            }
+
+            .carousel-slide img {
+                max-height: 60vh;
+            }
+
+            .section {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cover Image -->
+        <div class="cover-image" id="coverImage">
+            <div class="cover-text">
+                <h1>Welcome to Our Newsletter</h1>
+                <p>A Visual Journey</p>
+            </div>
+        </div>
+
+        <!-- Sections will be dynamically inserted here -->
+        <div id="sectionsContainer"></div>
+
+        <!-- Closing Image -->
+        <div class="closing-image" id="closingImage">
+            <div class="closing-text">
+                <p>Thank you for reading!</p>
+            </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+            <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+            <button class="lightbox-nav prev" onclick="lightboxNavigate(-1)">❮</button>
+            <img class="lightbox-content" id="lightbox-img" src="" alt="Enlarged view">
+            <button class="lightbox-nav next" onclick="lightboxNavigate(1)">❯</button>
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <script>
+        // ====================================
+        // CONFIGURATION - Edit these objects to customize your newsletter
+        // ====================================
+
+        // Cover Image Configuration
+        const coverConfig = {
+            image: 'https://lh3.googleusercontent.com/pw/AP1GczPAjS7Uq9b4BhaRDjd06AX0U01Otv0ULgrDIOrZMu6W0ZjI4uYDGlNZ5OJ2rhZIBJQ6J49j-6LHpuWhCp_uABHu80T2r4e2HxDiXmAZRcef-VMIjgKHzDnRSlC5haqrFvRZ4eNQ4mZAUdyXEeVBLnuaHQ=w1560-h264-s-no-gm?authuser=0',
+            title: 'Christmas 2025',
+            subtitle: 'More of the same.'
+        };
+
+        // Carousel Sections Configuration
+        const sections = [
+            {
+                title: 'Seattle and Vancouver!',
+                description: 'We ended 2024 with a quick trip to Seattle and Vancouver.  The trip was great and seeing the Pacific Northwest in the winter was a treat.',
+                images: [
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczNDwkfMvCtpWrRTsLcI8JrkADR68z4O92kXgzJsH17YMz55BeBwPWpbxbFPW5e69SbS4Ss4BeUqQFpRObb_R4kUSvvb2hslXubXfK_q1TrWKSsxXHS1kAzFP9TBLVxBU6rcSRfujSpJVcUgI_E1Sok8AA=w1560-h878-s-no-gm?authuser=0',
+                        caption: 'Deception Pass, in Washington state'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczMW7ca1wySJOIiSg53HL5Zx6qv5_NgqQDFU0HBwlFw6ROzOLC9wJjYse_R--5_tUz-LI0aPNXgaUxl_8KtR12WaoqsOC2359rq7L2ow8rjGippgP7R6yxaZJ40Qmlc6vSlUuOLIcFARVEygLzQc0h4T7g=w1560-h878-s-no-gm?authuser=0',
+                        caption: "Melanie's first cat friend, Luffy."
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczPKuu5KMhJdJ_JeHgOeyu2TkcL46cCd2x9gTgMKMKLIW8Aw7xmmLIJS2Xu4hbUK7SrGeO2LWZT2LpZRG22Bpn7YCSsUCTtfU0znFBF2HMLT5xZMRn3BMcax8cKBlKsNzU06MYZ1eBKJ6XbQsUMf4bhh8w=w1560-h878-s-no-gm?authuser=0',
+                        caption: 'Canada, over a high ravine.'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczM9KiEmkrWf-9B4oyMN_1X9M6YoH-k-_1OOTCMOVmEgA9jAzBpC4uPsAj47qtAoMp2qjbEGr51LwtNSsAA4cJRnmmdSPbsvZZi1Yj2b-_vTy62zxHMawhnfvF1tB8xJ-XN90qFq_pQf4i1II8X_KSP4SQ=w1560-h878-s-no-gm?authuser=0',
+                        caption: 'Near the water.'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczOV8aaG4vvHKPvc7UFxwDkb5SAL2ORSsUx-1o8hx7YomjXEiDYYMkG_iBSi1xsek8Rrzj8PWGEsQFNFb5K5qvr6vFT2Zho_Tl1N7y_0UIDuwAETdzzNjZTmP9sJzgFDsRcgDf6xwvZ-3ZXGzsHM-on_uw=w1560-h878-s-no-gm?authuser=0',
+                        caption: 'Melanie is learning to be a photographer.'
+                    }
+                ]
+            },
+            {
+                title: 'Science Activities',
+                description: 'We did many science activities this year.',
+                images: [
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczNOYjkFH3cZCabCk9U3QVyRmFsnDfTGtRa2LfZJJby0i-1GB2SM5P4sb8zzwge_zFIk000CkLqwZqWD2FCz_cw1OaAUffwzPhn6g9deHvsFO_GclFQfbrkoiitx03dzqlPk_5Uk5vFrgqZAcbBW2qT4Wg=w580-h1031-s-no-gm?authuser=0',
+                        caption: 'Making...something?'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczMvVe82S4sDT55Sl074wWcILWwddQWP7PUI4rKB1RcXR23O2TC6oJDI7Nsiqf00eUAt4_4yv4KGLhdMGwQuehwYw9MBL9u5E_ByMrFdtveEjxDQmXw0gnOtexBJ4EgQMypmFGRn40F2LDY2SVs1w2F9lw=w580-h1031-s-no-gm?authuser=0',
+                        caption: 'A couple more years until science fair time'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczOUvtpkUq2J6d95pJhG1dCLv1O3hvTJBwuBpy2ycl6R0ncN3Nzv0FMuxL8-XFbU_LaOR6nNckkiDKxG27LIo9RGvMz6Vx4m8QBSSkeFL02yfdGR0Ts4ILCev8TpFfRWqPGcvDiv6tcJl06u0HEXaYPs1w=w1833-h1031-s-no-gm?authuser=0',
+                        caption: 'A day at the Natural History Museum'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczM9mdOfJC1oQRtMMzwvnAXwo0QN_AmizzDYqH3s87ygs8-wZx06TS_1X8mUAVafHw99MzaM_WcT1CZnUi975MJDJqOgavhtx5tyYhndQd6-NCKphNLZ4KNcantlSBVkxQ1iGfKZDNadMEpmMhkR8hq5tA=w1560-h877-s-no-gm?authuser=0',
+                        caption: 'Rockets at Lowell Observatory'
+                    }
+                ]
+            },
+            {
+                title: 'Performances',
+                description: 'Melanie had several performances this year. A piano recital, Cinderella and Nutcracker ballet performance, and a musical theatre summer camp.',
+                images: [
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczOeJk0P7PZ5pZB1GZYiispakjQUhMVqGDlu9ZALrnuYkeQZs4a9sXRchGwwRgrTPbAb3Wy9YDTuD7YsNqNHm-ULbj5gS2TUQ6N0dShtl4CINzPZa9wmWBH4yAiD8eyMAwUbhHj5suUly75w8koD4eB8fA=w1833-h1031-s-no-gm?authuser=0',
+                        caption: 'Spring Ballet Recital - Cinderalla'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczNS5XYVDSvA9xKmOrNZAcS35b-I-w7lYdO2TdSmfm90zRkdyL1lL1CVzOuvuVNQUkBHp4igDXgqmuxS86DXDj7AjgNWRu9-3VQqYxv_8-WYmcCrwFDjWFcwXLcX3w-6Z_Tqu7w77yFphIwTtsk2ycpj4w=w1225-h919-s-no-gm?authuser=0',
+                        caption: 'Melanie playing Waltz of the Gladiators'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczN4PejDnss77XS2BzR836t4Vl6DKrZ10eBy2LnfgtNdVef-k0jUCJTgz_r-1MO6V5X6PDVg2_shMleBvZWBOPDQlww9Ro6kz4rVmQgeOD6iBI7ZTvjK4BnkIgPeSUIX9beA4m_aqyxwCZUBq6VLmPL_DA=w689-h919-s-no-gm?authuser=0',
+                        caption: 'Melanie and her piano teacher'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczNSh9ClquSDo5lB9XobZII8HpqMUsbVm9Oz80jWLIDqWz5NQKautYiaFK1zayZqsYlC7Gmjry2G7j2LVW-bmN8OI8V6Ev_xG9PEOEve3kmXIKd0agc7kGP0WQxdrZcH7opok4f6-MTgj3ekViEPfzpicA=w1833-h1031-s-no-gm?authuser=0',
+                        caption: 'Summer Musical Theatre camp'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczOv5AltuxbKBtNoM3CDq4Vq_GbNVU2P5Cy3vjsOqXWIym6SRenC3S8WZ18wCfS-nJghhWVVggvNbWhlAG9CoX7vpADDWTKZ-g6xXBp_wnJpZX899FdgFRqDc1uuLqz2-rxDGB2pvDd208j_rG8i4qP8Kw=w686-h1031-s-no-gm?authuser=0',
+                        caption: 'Winter Ballet Recital - Nutcracker - Gumdrop'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczPyfKtKgwXPjljsQwOZOy5PB7e_74BmL1o9fLoJNCNRHDCDCYI8rhTn_3JY5A4_T4IM0MrRKeKV0ZXkuLkpj1hIGAWRo01pQP-q8GPBgLvERBPlzTkVaCcAUFGbTEJEzRinBHFgxhcxQqPSxEkzFXIQ6Q=w686-h1031-s-no-gm?authuser=0',
+                        caption: 'Winter Ballet Recital - Nutcracker - Soldier'
+                    }
+                ]
+            },
+            {
+                title: 'Spring Trip - Joshua Tree',
+                description: 'We went to Joshua Tree for spring break this year.  We dragged more people out to the desert with us this time.',
+                images: [
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczO7NcQYjG05PAvjT1yzj_1PVa1MEeLMXp58IXzmqq5SK3rAXAgiHzXbR2p-PkebUZQ6wOyL55vGaGJrt6S8Oen_sgvQ5BQ18kNjwfd1j7h-S5h9KS6NOtch1iknVCNMaAnUaucTlaiHZp_nFifVdZtcYQ=w1833-h1031-s-no-gm?authuser=0',
+                        caption: 'Looking at art in the desert'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczMDLNxch-w6hD3BuLWK8FFMowb5Bk5K4pqBkLZYJulpNLgFSJNdiBVKN0S5JdLSKwGALs3fG7Y_eNnrKUYdyAkY00gmVZR-D6euxoVtIi8c-txTna7b2Un9XOOKUfwQNodtkX4x2BaAoeHmKe_WGeIN9A=w580-h1031-s-no-gm?authuser=0',
+                        caption: 'Inside one of the installations'
+                    }
+                ]
+            },
+            {
+                title: 'Fall Trip - El Paso, Albuquerque, and Flagstaff',
+                description: 'We visited El Paso, Albuquerque, and Flagstaff in the fall.  Melanie added to her Junior Ranger badge collection and got to see family.',
+                images: [
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczPxdUMv6gHVyPGny5ssGOQqfduG7ISw5XSIG70gaKykHgh1pgOGsqoXhBUmrRT-QdqVxdkEi5EtXMnf9BvVhZiHO6pYGkR2z_3c8oIwKKoVnXu3G_0-4qF8e-YAXbwmGSUYT5TdQjUwFvg7-SfRKr5OYA=w1634-h919-s-no-gm?authuser=0',
+                        caption: 'Suguaro National Park'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczOB7G1nnUY0JTCbihahbG2sDUUW9ZvSFKk0IJIj5vBQql_ERytV7Xl5EpCSstrQeVMIMeoh4qSPeaILmSHIN35zTLEZkEAXAl_6PI0GtMEOpn8XMAq2a8I84zs6Ks2b4vnc8YcBgJM8rtvhBiNON9iVXQ=w517-h919-s-no-gm?authuser=0',
+                        caption: 'Carlsbad Caverns'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczM7xHiUbJNEPTwEaWDNQcdJ6ulBzGx9muhzAkZM2ns-VQdoXb4gcMcwv3gE-skuphvsci9nnAPXSwE7BN4zj1bodUIPW-kaNzNlwKa0G5rpXhyq73sV_9CnI0fI0S7rxKC6x6WnAYkUqPBawSps5NNJ_A=w517-h919-s-no-gm?authuser=0',
+                        caption: 'Sunset Crater'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczNYub2CAG_vtusfbzq2yfnPOSKU7Jep1O4ApLuv0ebIhIE-Yt2pD7dri1CMZ4srQG4q2_e1YYasBfK4ibyuyIvuB5wy6NY57ZMoqshBXqeSHL1fOZkswgvVVKpkx5H6UBEPmJgXyAfDJeIek8sx9efi3Q=w1634-h919-s-no-gm?authuser=0',
+                        caption: 'White Sands National Park'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczNsgpBBcLF92gkwysPlRtdmu8GyWdDfGUXgSptnnsfUzu6djg3wVgsyNRHpxpf5Y4XyJrFxiCx-RidTdvuNENDm9OCd_snm_TQ2Rkc9sCLaKP0k3tz3wG0_dUwSUfoAnUz7kRYqLtrjtaWDyoHDD7237A=w1634-h919-s-no-gm?authuser=0',
+                        caption: 'Petrified Forest National Park'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczPQZ1i41U48AxC5KzKrOKOD-lUgs2MSCpoOoFxsQ1vIIc0A3U257A8O-UFU-rlfRw5PVcX4-c2PT_fHj5wI7se3fWIWq1YT6O0i6Fo4PJsb5fnrLg4xidHwR-neK8fNaV-T6E_gO2DOKubJ4UNNnuEpBQ=w1634-h919-s-no-gm?authuser=0',
+                        caption: 'Petrified Forest National Park'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczPoLhkl7RKaYpKQzFXZ-jFcfB0c0ie0rbkdsMx_hHRDkd0ytVEa09xmA55_5aKZ-EWVUp7tjHPksGmgoxEGcPDJgsB9rrW2bQtt6k1lXGH78to2mxqi6eZryOre9x2k_NE9f3LCblMV9grrHhrgxg0_EA=w1634-h919-s-no-gm?authuser=0',
+                        caption: 'Petrified Forest National Park'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczMEJ-wTnddZg4uV8p00QeFg31jNrZiMsmYJgyRql1NC2M9UQ0qbmxKBNnLqnpFP1i1DUWBdl8pKyk35F7B-ZwxTjAxPOLmC1DGCb9JWHUG0FpAFxx01ktPoMh6-_pwsmCOULxCYLd8HlIPVUp4QqYrwNw=w1634-h919-s-no-gm?authuser=0',
+                        caption: 'Sunset in Albuquerque'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczNXt0GUXnZV4WeF-LuNl1RRFzlcIoZW9S8w_Q7bop9AiBc4VUrL35FC_mtdEKh3zXFX3ySfOWdw7xm5RotA1Oa_JaTsKksANr-j04WdT44tnsvV7dESKI_VP-DEv792uh4f5JXhhdgwpc6GQF_md5_TrQ=w1560-h877-s-no-gm?authuser=0',
+                        caption: 'Sunset Crater'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczPr-IOIo1UWIGlBa1nqYaoIU7o3r71DcIUqdiNNzGoRiafPEy76iyXAKBoKjz6SukNU0rnAou6jO0soy8oAVmeyW8nXjMCRlsSAPum8na-3n-On2VrVox6o6M6hKda-qORKK5t6Jpr0-Yq5IPqyzhRj4w=w1634-h919-s-no-gm?authuser=0',
+                        caption: 'Dinner at El Paso'
+                    }
+                ]
+            },
+            {
+                title: 'Some of the cousins came along!',
+                description: 'Though we had a lot of the cousins visit earlier in the year, we didn\'t get many pictures.  Here are some that we were able to get.',
+                images: [
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczOJ3JSJyPLlpJ2bezVMcZjELz7F4fb6WcWVjK3M5yKEg2dNM1QZf_74fGwgnLjPt-NoKwU24pDcyyLeTfkDfW6tBzVYXXxqoT5yY3c8ka_DpaHkW4OD0JlmAwH4cNMHjWPH0xS08wAEQIQUNLIFyL4Knw=w1560-h878-s-no-gm?authuser=0',
+                        caption: 'Carne Asada Fries'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczN0oHKYN9jd9-qdHJtS4l-L_mNMRokIgSvmk6MrCJlWfyT5mqWy90-qWjazVpN9_1euQ6pA2T3s4c79cDTHrNyumBxfW14iskEjtJ6sXYa0frIkuiw60BeeqZdNyvFr1TX0bBj-Xw25IYsz1SV1kl_KdA=w517-h919-s-no-gm?authuser=0',
+                        caption: 'Fishing'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczMvKFKAEX5MegLlCs8yUy0iK2wIFPaViuWTE-Bw1LEPGNMVQJ-GHi7oHgKjRd2p7go-O0GBoBD53QLWGmXQrKWGVDsxZYgVV7XAKmn60HPhVhAmv83U2bJ7CF5wkCs__wPpwoAbbFP_3Bu1wkoHMnptbg=w1560-h878-s-no-gm?authuser=0',
+                        caption: 'Red Robin'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczOopVyrxHbQIW8VoyFSDHfvHti94otw1UvlGfdjpZiWQe6Of32gJyxHMNhv0twJ8TdWaOkn0iihSPjhJiU7Vbm2hzsk6U--wy3cQtN96J1E1HHDy13FBS-ZLXmSOmm3SQWDVJdSvdbc3KI1VibkvZeNNQ=w517-h919-s-no-gm?authuser=0',
+                        caption: 'Automobile Museum'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczM46c6OmNIj0Ym1jzEFrxX-ZQWtSkWdLmARmtpf-82Giy3JKCuGIs9skEdQplAKyshODnEYdvq19HkNhe2S-MZNJY-reHEG_BhUDME-s_0M1LxuajzEZq0X9Ib21zVZdvdUHVm4872m_D0wTVwM8k9XOw=w1560-h878-s-no-gm?authuser=0',
+                        caption: 'Halloween'
+                    },
+                ]
+            },
+            {
+                title: 'Lego Adventures',
+                description: 'And, since we went on a trip, the TARDIS had to come along for the ride.  Curiosity got to come along, as well.',
+                images: [
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczMtFboITDvuB6hn4rg8Wkbt9nmtxQPzKm6N1sPmuFZ31jT7XrHX-aA4hm_Pzn9N-rjJ2tUcPU47YQT7aj432GekMIR7xv2s-9nHlW2fs-tkviJEVzQKtXyjLUmTA0C50ehMN0S2dIgmOr7Yi530Jp2ylQ=w1560-h878-s-no-gm?authuser=0',
+                        caption: 'Joshua Tree'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczNiPeWy8HUkl3NKPwoB_XJvPP2iUw_roLfxbHxMIYJr-UvpcjZsZzQdtTcMKTuQef2MaeLix9GiZQtDtt7Fko4hBjT8DbmTzHZU6SRX_eXPXaMEk26PsK1gSU8dJlTGiiyeSQ2pdex_5o4T28rTo-Fq1Q=w1560-h878-s-no-gm?authuser=0',
+                        caption: 'Joshua Tree'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczNW1tYVF_reUbjaCmSIjbb2PTD1qwpKku5ZmirDv3Fpnff9bG2PyP-z2MLwfXF4CvWhYk1wcWs9x5gQwlPTp7D9dYVu9Z0Xgj6ZDdWqKMTmV8gd8Ef_8ABPtBnqJXLLCF9zT1rpdqo59i9jwe_KZ12p9g=w1560-h877-s-no-gm?authuser=0',
+                        caption: 'White Sands'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczNF1xdXLn5rS_c4FwcBB_iNd71qGW502bfotrn7QaQKbFFNSa2ZHNu1QeVx9XrS6CT0CB3Bes3Szu5YXiTUov20GnarDpyp0E16y3P5btqNV5sdjoW1awPVr9Xk3_RgZmS1itExZNhtrWjAu4hojaZc4Q=w1489-h919-s-no-gm?authuser=0',
+                        caption: 'Petrified Forest'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczN8ImuglYCctH5TODGYMLzmmQ-NbEGrUJQO2BoJKRU1C_K5cY_pMf60jQNTzshitn-vCN6rr36ACi0QTnhog74z4UA1_h4UiyIb2d0Hy9Z4HIEfd7fTa4oH7oTPd-MSi3r0z08D2H40FtH0GXjzpP_wTw=w517-h919-s-no-gm?authuser=0',
+                        caption: 'Petrified Forest'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczMUGib2VoL4UFoiPbI8UCeVFkVIKmJk7CkwiETd0Mz2D9xAQrKOB-VDM6_xwrvl-Xxchd7QkOWHsXBgsXwAji_pYHnWCtNGVCg1PqjR3mkU-O2NJUqA6Iu2onCmgVGFaYEWWa4BTSOrqmINPAUPd3Mmcg=w1560-h877-s-no-gm?authuser=0',
+                        caption: 'Sunset Crater'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczOfnUZGahiHqeakEWMH6dp3X0G9oq13gHLHU3DZnfcVfZ5FXbVRIeEVkHlJs-BfRR1woT9e02RAFuvgonabSgUrJcIUAUOj_13Zvaym98lHfis9oJ2OOuoadcDR2hvCQd4vJkleAqqh-LvNxmW7J-B1SA=w1560-h877-s-no-gm?authuser=0',
+                        caption: 'Sunset Crater'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczNW_rgSxJFgs8u-3-ABst1b7iFxSmRTwIcrcWZEiunhvXRFRIiui_kf2GVqWYMam54MmSrAT1kGSCIfTWSxJ6pWIMnlFzTT1sZspCynAULjmIh13GrfqdZHIXXncR3d5JWe1xvKPXa0M94Rp5KhbbnPEQ=w1560-h877-s-no-gm?authuser=0',
+                        caption: 'Sunset Crater'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczM5auElgdVyktgjSiFGfeu5UqY_u08-E2uq5WbrN8dmVoff8psMH2TpqufALa7nAvr0kOKj6BBQVY50exoGjpbPaLp57qGUW8OJyoVJb1MjPJae1ToUHdeZ7tg1caA0z-icUNc71k_EURcKbtPEqEh1TA=w1560-h877-s-no-gm?authuser=0',
+                        caption: 'Sunset Crater'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczPU3lQ1QmbcZ48yDNSP1YZscW7U-Fq0yd-tW3xHj4zCs0p7SqvbGMJNb7lXZjQ5ojl4k9ueGHvIuL6mbYtkoWyciiIkz0TFzsZ-xhDMi9hHz8phwCVnoYkkokeK_m9awiWIZSKPRvUL9Zgv2OdEChyrag=w1560-h877-s-no-gm?authuser=0',
+                        caption: 'Lowell Observatory, with big brother.'
+                    }
+                ]
+            },
+            {
+                title: 'Don\'t forget Teddy!',
+                description: 'So many pictures of Teddy, but here\'s one randomly, not even trying',
+                images: [
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczN5B8SXaQ_vt6_bWDvg18gYeeVth2nw-RcRbjGVDYdB9qlFc6nDrkS0P0-YmpBrUB1N20L9g3y26HUnohuL8yscrHyMDGruZSOwyXy3_A8FnMSu1SLYKycU2uubl-bxB3qK_pXTacuwnHqC0lKem_G4oQ=w1560-h818-s-no-gm?authuser=0',
+                        caption: 'Just because he was being photogenic at that moment.'
+                    }
+                ]
+            },
+            {
+                title: 'Star chasing',
+                description: 'We tried to go star chasing a few times this year.',
+                images: [
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczPi5Fejw2ZnAIzZViKwQ8GE04hAJGx-TkekNiHomOmhmmynj_KmgxYzoxddHYs7c-MdZMGkyuHBPkgTXJdVzpz3IKULAyQd0oRuMdSQrPx5cUSphbJeZjd1hP8tSH4Wrk_WNg8Ji2otZIiIxE6GlHxTzw=w1560-h878-s-no-gm?authuser=0',
+                        caption: 'The Milky Way over Joshua Tree'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczMzkJEGAuhAM96QX1EMX0Zbvm-uMBITMC2GLnMHFwOYItaIG-WFhwdSThpGKhDBazd-weTlpMltpOSbLoRXGKDNKvsDwhEPwvdZwG2s81eNQgCUNlCBpwmYmniUseu_cQs9Pm8W-C4ko4lxBB_GL5IDZA=w517-h919-s-no-gm?authuser=0',
+                        caption: 'The Big Dipper above a Joshua Tree'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczOvxAHTf2NhR1bkHXpxKo3yFdiku1Eha1-llrTj0iGvpEfvtSpNNlsP0BlsgVnPnCCEUmhhWhgOn2SJ3coxuqEiDlA4muKwiMK8UnkQuE32-yAzt_u4sQYURpwaRIaOyrZDGRsMN_mreLcyOcDo6q5WOw=w553-h919-s-no-gm?authuser=0',
+                        caption: 'The Milky Way at a star party'
+                    },
+                    {
+                        url: 'https://lh3.googleusercontent.com/pw/AP1GczOI3FevTwJ7p3lMOg8rA87tnwjwKkS5kWzLgxIZjFX8ZEIQL3gM-DoUrgl2FWd-KWlUgbepPoxS6r2tk2N0nKqyCAw7JlLcDKQSV3KDucf2p6S3LMitvVCLxVSM18GWfAITB38-VcMzIpw7vAxWVgEYPQ=w1560-h671-s-no-gm?authuser=0',
+                        caption: 'Night time over Albuquerque'
+                    }
+                ]
+            }
+        ];
+
+        // Closing Image Configuration
+        const closingConfig = {
+            image: 'https://lh3.googleusercontent.com/pw/AP1GczOiAj4fy4VZdY5ZZKiJi0Xuhu8DYxktXUb8UgbQKzTPzWyF0gE-xhXJ6aRm4udzzCIvlAroUmE1nvqeUnHCYTieBNDA5XvwP6V6MxzGDjjxTjj_OklyOoUDDKIH1viaWlGvcQzuSoxqpzuyCxF8hRrMdg=w1560-h285-s-no-gm?authuser=0',
+            text: 'Until next year, Merry Christmas and Happy New Year!'
+        };
+
+        // ====================================
+        // CAROUSEL LOGIC - No need to edit below unless customizing functionality
+        // ====================================
+
+        // Set cover image
+        function setCoverImage() {
+            const coverDiv = document.getElementById('coverImage');
+            coverDiv.style.backgroundImage = `url('${coverConfig.image}')`;
+            coverDiv.style.backgroundSize = 'cover';
+            coverDiv.style.backgroundPosition = 'center';
+            coverDiv.querySelector('h1').textContent = coverConfig.title;
+            coverDiv.querySelector('p').textContent = coverConfig.subtitle;
+        }
+
+        // Create carousel for a section
+        function createCarousel(sectionData, sectionIndex) {
+            const carouselHTML = `
+                <div class="carousel" id="carousel-${sectionIndex}">
+                    <div class="carousel-container" id="carousel-container-${sectionIndex}">
+                        ${sectionData.images.map((img, index) => `
+                            <div class="carousel-slide">
+                                <img src="${img.url}" alt="Slide ${index + 1}" onclick="openLightbox(${sectionIndex}, ${index})">
+                                <div class="carousel-caption">${img.caption}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <button class="carousel-button prev" onclick="moveSlide(${sectionIndex}, -1)">❮</button>
+                    <button class="carousel-button next" onclick="moveSlide(${sectionIndex}, 1)">❯</button>
+                </div>
+                <div class="carousel-indicators" id="indicators-${sectionIndex}">
+                    ${sectionData.images.map((_, index) => `
+                        <span class="indicator ${index === 0 ? 'active' : ''}" onclick="goToSlide(${sectionIndex}, ${index})"></span>
+                    `).join('')}
+                </div>
+            `;
+
+            return carouselHTML;
+        }
+
+        // Build all sections
+        function buildSections() {
+            const container = document.getElementById('sectionsContainer');
+            
+            sections.forEach((section, index) => {
+                const sectionHTML = `
+                    <div class="section">
+                        <h2 class="section-title">${section.title}</h2>
+                        <p class="section-description">${section.description}</p>
+                        ${createCarousel(section, index)}
+                    </div>
+                `;
+                container.innerHTML += sectionHTML;
+            });
+        }
+
+        // Set closing image
+        function setClosingImage() {
+            const closingDiv = document.getElementById('closingImage');
+            closingDiv.style.backgroundImage = `url('${closingConfig.image}')`;
+            closingDiv.style.backgroundSize = 'cover';
+            closingDiv.style.backgroundPosition = 'center';
+            closingDiv.querySelector('p').textContent = closingConfig.text;
+        }
+
+        // Track current slide for each carousel
+        const currentSlides = new Array(sections.length).fill(0);
+
+        // Move slide
+        function moveSlide(carouselIndex, direction) {
+            const container = document.getElementById(`carousel-container-${carouselIndex}`);
+            const totalSlides = sections[carouselIndex].images.length;
+            
+            currentSlides[carouselIndex] += direction;
+            
+            if (currentSlides[carouselIndex] < 0) {
+                currentSlides[carouselIndex] = totalSlides - 1;
+            } else if (currentSlides[carouselIndex] >= totalSlides) {
+                currentSlides[carouselIndex] = 0;
+            }
+            
+            updateCarousel(carouselIndex);
+        }
+
+        // Go to specific slide
+        function goToSlide(carouselIndex, slideIndex) {
+            currentSlides[carouselIndex] = slideIndex;
+            updateCarousel(carouselIndex);
+        }
+
+        // Update carousel position and indicators
+        function updateCarousel(carouselIndex) {
+            const container = document.getElementById(`carousel-container-${carouselIndex}`);
+            const offset = -currentSlides[carouselIndex] * 100;
+            container.style.transform = `translateX(${offset}%)`;
+            
+            // Update indicators
+            const indicators = document.querySelectorAll(`#indicators-${carouselIndex} .indicator`);
+            indicators.forEach((indicator, index) => {
+                if (index === currentSlides[carouselIndex]) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+
+        // Lightbox state
+        let currentLightboxSection = 0;
+        let currentLightboxImage = 0;
+
+        // Lightbox functions
+        function openLightbox(sectionIndex, imageIndex) {
+            currentLightboxSection = sectionIndex;
+            currentLightboxImage = imageIndex;
+            updateLightboxImage();
+            
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('active');
+            
+            // Prevent body scroll when lightbox is open
+            document.body.style.overflow = 'hidden';
+        }
+
+        function updateLightboxImage() {
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            const section = sections[currentLightboxSection];
+            const image = section.images[currentLightboxImage];
+            
+            lightboxImg.src = image.url;
+            lightboxCaption.textContent = image.caption;
+        }
+
+        function lightboxNavigate(direction) {
+            const section = sections[currentLightboxSection];
+            currentLightboxImage += direction;
+            
+            // Wrap around at boundaries
+            if (currentLightboxImage < 0) {
+                currentLightboxImage = section.images.length - 1;
+            } else if (currentLightboxImage >= section.images.length) {
+                currentLightboxImage = 0;
+            }
+            
+            updateLightboxImage();
+        }
+
+        function closeLightbox(event) {
+            // Only close if clicking on the background or close button
+            if (event.target.id === 'lightbox' || event.target.classList.contains('lightbox-close')) {
+                const lightbox = document.getElementById('lightbox');
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close lightbox with Escape key, navigate with arrow keys
+        document.addEventListener('keydown', function(event) {
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox.classList.contains('active')) {
+                if (event.key === 'Escape') {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                } else if (event.key === 'ArrowLeft') {
+                    lightboxNavigate(-1);
+                } else if (event.key === 'ArrowRight') {
+                    lightboxNavigate(1);
+                }
+            }
+        });
+
+        // Initialize newsletter
+        function init() {
+            setCoverImage();
+            buildSections();
+            setClosingImage();
+        }
+
+        // Run on page load
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
