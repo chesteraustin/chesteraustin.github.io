@@ -1116,7 +1116,7 @@ TOTALEXP = 10. # Total Exposure Time in seconds
 - [X] Processed
 - [X] Published
 
-![C2 - Bow-tie Nebula](lh3.googleusercontent.com/pw/AP1GczPUKnRyGiiXbles4q6C8LiA9FmGPdMvMQ5N5HsACu6Yevoxbb20qhP2gucpVJI2lVCaHdRWD2SWMOzkNBTarAlVImGeMc9wbjD6_N4N-iLB25X4R_9ZTnrG_xI56Almm9oh3dkV9PJ-dYf1JpjOS_0lqA=w501-h668-s-no-gm?authuser=0)
+![C2 - Bow-tie Nebula](https://lh3.googleusercontent.com/pw/AP1GczPUKnRyGiiXbles4q6C8LiA9FmGPdMvMQ5N5HsACu6Yevoxbb20qhP2gucpVJI2lVCaHdRWD2SWMOzkNBTarAlVImGeMc9wbjD6_N4N-iLB25X4R_9ZTnrG_xI56Almm9oh3dkV9PJ-dYf1JpjOS_0lqA=w501-h668-s-no-gm?authuser=0)
 
 **Date of latest observation:** October 29, 2025
 
