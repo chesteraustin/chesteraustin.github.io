@@ -8,28 +8,134 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script> 
   <style>
-    .collapsible-content {
-      margin-left: 20px;
-      transition: all 0.3s ease;
-      padding: 10px;
-      border-left: 2px solid #ccc;
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
     }
 
-    h2, h3 {
-      user-select: none;
-      cursor: pointer;
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    h2 {
       background-color: #f0f0f0;
-      padding: 5px;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 30px;
+      cursor: pointer;
+      user-select: none;
     }
 
-    h2:hover, h3:hover {
+    h2:hover {
       background-color: #dcdcdc;
+    }
+
+    h2::before {
+      content: '▶ ';
+      display: inline-block;
+      transition: transform 0.3s;
+    }
+
+    h2.expanded::before {
+      transform: rotate(90deg);
+    }
+
+    .carousel-container {
+      position: relative;
+      margin: 20px 0;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+      display: none;
+      animation: slideDown 0.3s ease-out;
+    }
+
+    .carousel-container.visible {
+      display: block;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .carousel-content {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel-slide {
+      display: none;
+      animation: fadeIn 0.5s;
+    }
+
+    .carousel-slide.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .carousel-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+    }
+
+    .carousel-button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .carousel-button:hover {
+      background-color: #0056b3;
+    }
+
+    .carousel-button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    .carousel-indicator {
+      text-align: center;
+      font-weight: bold;
+      color: #555;
     }
 
     pre {
       background-color: #f5f5f5;
       padding: 10px;
       border-radius: 5px;
+      overflow-x: auto;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    h3 {
+      color: #0056b3;
+      margin-top: 0;
     }
   </style>
 </head>
@@ -41,7 +147,7 @@
 
   <script>
     const markdownOutput = document.getElementById('markdown-output');
-    const markdownUrl = 'challenge.md'; // Replace with your Markdown file URL
+    const markdownUrl = 'challenge.md';
 
     window.addEventListener('DOMContentLoaded', async () => {
       try {
@@ -68,30 +174,112 @@
           link.setAttribute('rel', 'noopener noreferrer');
         });
 
-        // Add click-to-collapse functionality for each H2 and H3 and their following content
-        const headers = markdownOutput.querySelectorAll('h2, h3');
-        headers.forEach(header => {
-          // Create a wrapper div for collapsible content
+        // Create carousels for each month (H2 sections)
+        const h2Headers = markdownOutput.querySelectorAll('h2');
+        h2Headers.forEach(header => {
+          // Create carousel container
+          const carouselContainer = document.createElement('div');
+          carouselContainer.classList.add('carousel-container');
+          
+          const carouselContent = document.createElement('div');
+          carouselContent.classList.add('carousel-content');
+          
+          // Collect all H3 sections for this month
+          const slides = [];
           let sibling = header.nextElementSibling;
-          const wrapper = document.createElement('div');
-          wrapper.classList.add('collapsible-content');
-
-          // Move all siblings until the next H2 or H3 into the wrapper
-          while (sibling && !['H2', 'H3'].includes(sibling.tagName)) {
+          let currentSlide = document.createElement('div');
+          currentSlide.classList.add('carousel-slide');
+          
+          while (sibling && sibling.tagName !== 'H2') {
             const next = sibling.nextElementSibling;
-            wrapper.appendChild(sibling);
+            
+            if (sibling.tagName === 'H3') {
+              // If we have content in current slide, save it
+              if (currentSlide.children.length > 0) {
+                slides.push(currentSlide);
+                currentSlide = document.createElement('div');
+                currentSlide.classList.add('carousel-slide');
+              }
+              currentSlide.appendChild(sibling.cloneNode(true));
+            } else {
+              currentSlide.appendChild(sibling.cloneNode(true));
+            }
+            
+            sibling.remove();
             sibling = next;
           }
-
-          header.insertAdjacentElement('afterend', wrapper);
-
-          // Set initial state
-          wrapper.style.display = 'none';
-
-          // Toggle on click
-          header.addEventListener('click', () => {
-            wrapper.style.display = wrapper.style.display === 'none' ? 'block' : 'none';
+          
+          // Add the last slide if it has content
+          if (currentSlide.children.length > 0) {
+            slides.push(currentSlide);
+          }
+          
+          // Add slides to carousel
+          slides.forEach((slide, index) => {
+            if (index === 0) slide.classList.add('active');
+            carouselContent.appendChild(slide);
           });
+          
+          // Create carousel controls
+          const controls = document.createElement('div');
+          controls.classList.add('carousel-controls');
+          
+          const prevButton = document.createElement('button');
+          prevButton.classList.add('carousel-button');
+          prevButton.textContent = '← Previous';
+          
+          const indicator = document.createElement('div');
+          indicator.classList.add('carousel-indicator');
+          indicator.textContent = slides.length > 0 ? `1 / ${slides.length}` : '0 / 0';
+          
+          const nextButton = document.createElement('button');
+          nextButton.classList.add('carousel-button');
+          nextButton.textContent = 'Next →';
+          
+          controls.appendChild(prevButton);
+          controls.appendChild(indicator);
+          controls.appendChild(nextButton);
+          
+          carouselContainer.appendChild(carouselContent);
+          carouselContainer.appendChild(controls);
+          
+          // Insert carousel after header
+          header.insertAdjacentElement('afterend', carouselContainer);
+          
+          // Add click handler to toggle carousel visibility
+          header.addEventListener('click', () => {
+            const isVisible = carouselContainer.classList.contains('visible');
+            carouselContainer.classList.toggle('visible');
+            header.classList.toggle('expanded');
+          });
+          
+          // Carousel navigation logic
+          let currentIndex = 0;
+          
+          const updateCarousel = () => {
+            slides.forEach((slide, index) => {
+              slide.classList.toggle('active', index === currentIndex);
+            });
+            indicator.textContent = `${currentIndex + 1} / ${slides.length}`;
+            prevButton.disabled = currentIndex === 0;
+            nextButton.disabled = currentIndex === slides.length - 1;
+          };
+          
+          prevButton.addEventListener('click', () => {
+            if (currentIndex > 0) {
+              currentIndex--;
+              updateCarousel();
+            }
+          });
+          
+          nextButton.addEventListener('click', () => {
+            if (currentIndex < slides.length - 1) {
+              currentIndex++;
+              updateCarousel();
+            }
+          });
+          
+          updateCarousel();
         });
 
       } catch (error) {
